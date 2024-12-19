@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // JavaScript function to show the custom modal
+        function showPopup(info) {
+            var modal = document.getElementById("myModal");
+            var modalContent = document.getElementById("modal-content");
+            modal.style.display = "block";  // Show the modal
+            modalContent.innerHTML = info; // Set the content of the modal
+        }
+
+        // Close the modal when the user clicks the close button
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside the modal content
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Iin Sumarni</div>
+        <nav>
+            <ul>
+                <li><a href="#npm"  onclick="showPopup('NPM: 2315061040')">NPM</a></li>
+                <li><a href="#kelas"  onclick="showPopup('TI D')">KELAS</a></li>
+                <li><a href="#nowa"  onclick="showPopup('0895617969599')">NO WA </a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <br>
+    <section id="home" class="profile-section">
+        <div class="profile-text">
+            <h1>Hi There,<br>I'm <span class="highlight">Iin Sumarni</span></h1>
+            <p>I am <span class="highlight">Informatics Engineering Student</span></p>
+            <h2>Labuhan Ratu, Bandar Lampung</h2>
+            <br>
+            <a href="https://www.linkedin.com/in/iin-sumarni-45892b293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="btn">About Me</a>
+            <br>
+        </div>
+        <div class="profile-image">
+            <img src="iin.foto.jpg" alt="Profile Image">
+        </div>
+    </section>
+
+    <!-- Modal (hidden by default) -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-content"></p>
+        </div>
+    </div>
+
+</body>
+</html>
